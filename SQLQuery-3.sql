@@ -86,3 +86,27 @@ SELECT StudentName, JoiningDate
 FROM Students
 CROSS JOIN Admissions;--CROSS JOIN ARE USED FOR SHOWING EVERY POSSIBLE COMBINATION
 
+CREATE TABLE Employee
+(
+	EmployeeID int,
+	EmployeeName varchar(50),
+	Supervisor int,
+	Designation varchar(50)
+)
+
+INSERT INTO Employee(EmployeeID, EmployeeName, Supervisor, Designation)
+VALUES (1, 'QWE', 1, 'CEO');
+INSERT INTO Employee(EmployeeID, EmployeeName, Supervisor, Designation)
+VALUES (2, 'ABC', 4, 'Leader');
+INSERT INTO Employee(EmployeeID, EmployeeName, Supervisor, Designation)
+VALUES (3, 'PQR', 1, 'HR');
+INSERT INTO Employee(EmployeeID, EmployeeName, Supervisor, Designation)
+VALUES (4, 'XYZ', 2, 'Developer');
+INSERT INTO Employee(EmployeeID, EmployeeName, Supervisor, Designation)
+VALUES (5, 'IJK', 3, 'Marketer');
+
+SELECT * FROM Employee;
+
+Select Emp.EmployeeID, Emp.EmployeeName, Sup.EmployeeID, Sup.EmployeeName
+from Employee Emp, Employee Sup
+where Emp.Supervisor = Sup.EmployeeID;
